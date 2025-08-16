@@ -1,6 +1,7 @@
 from colored import Fore, Back, Style, back, fore, style
 import random
 from config import puzzle_grid
+import config
 
 
 def rand_rgb():
@@ -98,10 +99,8 @@ class Render ():
             print()
         print()
 
-
-
-if __name__ == "__main__":
-    import config
+def test():
+    '''test the Render class'''
     render = Render()
     basic_frame = Shape(w=config.width, h=config.height, pixels=config.frame_constrain, rev_flag=False)
     render.print_shape(shape=basic_frame)
@@ -114,3 +113,7 @@ if __name__ == "__main__":
     render.print_shape(shape=basic_frame)
 
     render.display_grid(config.puzzle_grid, config.frame_constrain)
+
+
+if __name__ == "__main__":
+    test()

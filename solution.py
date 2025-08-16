@@ -4,6 +4,7 @@ import pieces
 import copy
 from queue import  Queue
 from datetime import date, timedelta
+import time
 
 
 class Solution:
@@ -197,7 +198,7 @@ class Solution:
 
 
 
-def test_DFS(year=2025):
+def test_DFS_over_year(year=2025):
     sol = Solution()
     sol.init_state()
 
@@ -217,36 +218,37 @@ def test_DFS(year=2025):
             print()
         day_test += delta
 
-
-
-
-if __name__ == "__main__":
-    import time
+def test_BFS():
     solver = Solution()
     solver.init_state()
     solver.setup_target_date(m=8, d=9)
     solver.show_state()
     start_time = time.perf_counter()
     # BFS
-    if False:
-        q = solver.BFS(list(range(10)))
-        end_time = time.perf_counter()
-        print(f"total {q.qsize()} solutions, cost {end_time - start_time}")
-        solver.show_state()
-    if False:# DFS
-        q = solver.DFS()
-        end_time = time.perf_counter()
-        print(f"total {solver.cnt} steps, cost {end_time - start_time}")
-        rslt = "can" if q else "can not"
-        print(f"[!] DFS Algorithm {rslt} find answer")
-        solver.show_state()
-
-    # test_a_year
-    start_time = time.perf_counter()
-    test_DFS(2025)
+    q = solver.BFS()
     end_time = time.perf_counter()
-    print(f"total cost {end_time - start_time}")
+    print(f"total {q.qsize()} solutions, cost {end_time - start_time}")
+    solver.show_state()
 
 
+def test_DFS():
+    solver = Solution()
+    solver.init_state()
+    solver.setup_target_date(m=8, d=9)
+    solver.show_state()
+    start_time = time.perf_counter()
+    q = solver.DFS()
+    end_time = time.perf_counter()
+    print(f"total {solver.cnt} steps, cost {end_time - start_time}")
+    rslt = "can" if q else "can not"
+    print(f"[!] DFS Algorithm {rslt} find answer")
+    solver.show_state()
 
 
+if __name__ == "__main__":
+    print("Testing DFS") 
+    test_DFS()
+    print("Testing BFS") 
+    test_BFS()
+    print("Tes ting over year 2025") 
+    test_DFS_over_year(2025)

@@ -66,7 +66,13 @@ This is a solver using BFS & DFS Algorithm to solve Calendar Puzzle Prolbem.
 ```
 拼图需要使用这10块放入拼图板中，使得能够正确地展示当天的`月份`,`日期`和`星期x`的信息。
 
-## How to use 
+## Prerequisite
+渲染部分使用 `colored` 库在图形界面输出颜色，可以通过如下方式安装
+```
+$ pip install colored
+```
+## How to use
+
 
 
 ## Project Structure

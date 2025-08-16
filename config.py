@@ -22,10 +22,10 @@ def get_date_constrain(y=2025, m=8, d=1):
 puzzle_grid = [
     ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'xxx'],
     ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'xxx'],
-    [f' 0{i + 7*0}'[:3] for i in range(7)],
-    ['08 ', ' 09', ' 10', ' 11', ' 12', ' 13', ' 14'],
-    [f' {i + 7*2}' for i in range(7)],
-    [f' {i + 7*3}' for i in range(7)],
+    [f' 0{i + 7*0+ 1}'[:3] for i in range(7)],
+    [' 08', ' 09', ' 10', ' 11', ' 12', ' 13', ' 14'],
+    [f' {i + 7*2 + 1}' for i in range(7)],
+    [f' {i + 7*3 + 1}' for i in range(7)],
     [' 29', ' 30', ' 31', 'Mon', 'Tue', 'Wed', 'Thu'],
     ['xxx', 'xxx', 'xxx', 'xxx', 'Fri', 'Sat', 'Sun']
 ]

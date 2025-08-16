@@ -138,33 +138,17 @@ for b in blocks:
     b.set_changeF(False)
     b.gen_all_configs()
 
-print(len(blocks))
 
-if __name__ == "__main__":
+def test_1():
     render = Render()
     for key in list(piece.keys()):
         print(f"-------------{key}---------------")
         b = Block(layout=piece[key])
-        if False:
-            render.print_shape(b.to_shape())
-            render.newline()
-            b.set_changeF(True)
-            b.rotate(3)
-            render.print_shape(b.to_shape())
-            render.newline()
         b.gen_all_configs()
         for i in range(b.get_config_num()):
             render.print_shape(b.gen_shape(i))
             render.newline()
 
-        #dbg
-        if False:
-            print(b.is_same_patten(b.config_space[0], b.config_space[1]))
-            print(b.is_same_patten(b.config_space[0], b.config_space[2]))
-            print(b.config_space[0])
-            print(b.config_space[2])
-            b.config_space[0][2].sort(key=lambda x: x[0] + 10*x[1])
-            b.config_space[2][2].sort(key=lambda x: x[0] + 10*x[1])
-            print(b.config_space[0])
-            print(b.config_space[2])
 
+if __name__ == "__main__":
+    test_1()
